@@ -1,0 +1,11 @@
+version: '2.0'
+services:
+  app:
+    build: .
+    volumes:
+      - ./.gnupg:/root/.gnupg
+      - ./files:/files
+    command: ./bin/start_dev_server
+    environment:
+      POSTGRES_HOST: project-db
+      POSTGRES_USER: root
